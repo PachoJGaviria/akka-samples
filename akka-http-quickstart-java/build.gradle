@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-http_2.12:10.1.7'
+    compile 'com.typesafe.akka:akka-http-jackson_2.12:10.1.7'
+    compile 'com.typesafe.akka:akka-stream_2.12:2.5.21'
+    testCompile 'com.typesafe.akka:akka-http-testkit_2.12:10.1.7'
+    testCompile 'junit:junit:4.12'
+}
+
+mainClassName = "com.example.QuickstartServer"
+
+run {
+    standardInput = System.in
+}
