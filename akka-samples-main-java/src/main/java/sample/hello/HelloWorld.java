@@ -14,11 +14,11 @@ public class HelloWorld extends AbstractActor {
   public Receive createReceive() {
     return receiveBuilder()
         .matchEquals(DOWN_SYSTEM, m -> {
-          // when the greeter is done, stop this actor and with it the application
+          // when the printer send the down system message, stop this actor and with it the application
           getContext().stop(self());
         })
         .matchEquals(DONE, m -> {
-          System.out.println("Someone finished the job!");
+          System.out.println("Some greeter finished the job!");
         })
         .build();
   }
@@ -37,7 +37,7 @@ public class HelloWorld extends AbstractActor {
 
   private void createGreeterActor(int id) {
     // create the greeter actor
-    final ActorRef greeter = getContext().actorOf(Props.create(Greeter.class, id), "greeter"+id);
+    final ActorRef greeter = getContext().actorOf(Props.create(Greeter.class, id), "greeter" + id);
     // tell it to perform the greeting
     greeter.tell(GREET, self());
   }

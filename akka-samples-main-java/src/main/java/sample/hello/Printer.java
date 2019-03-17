@@ -4,7 +4,6 @@ import akka.actor.AbstractActor;
 
 import static sample.hello.Message.DONE;
 import static sample.hello.Message.DOWN_SYSTEM;
-import static sample.hello.Message.GREET;
 
 public class Printer extends AbstractActor {
   @Override

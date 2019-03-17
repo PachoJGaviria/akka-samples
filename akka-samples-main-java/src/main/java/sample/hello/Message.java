@@ -1,6 +1,6 @@
 package sample.hello;
 
-public enum  Message {
+public enum Message {
   GREET,
   DONE,
   DOWN_SYSTEM
